@@ -92,12 +92,7 @@ app.post("/login", passport.authenticate("local", {
 //Logout
 app.get("/logout", function(req, res){
   req.logout();
-  Post.find({}, function (err, posts) {
-    res.render("home", {
-      startingContent: homeStartingContent,
-      posts: posts,
-    });
-  });
+  res.render("login");
 });
 
 //COMPOSE
