@@ -59,7 +59,6 @@ app.get("/", isLoggedIn,
         res.render("home", {
           startingContent: homeStartingContent,
           posts: posts,
-          token:1
         });
       });
     });
@@ -93,7 +92,10 @@ app.post("/login", passport.authenticate("local", {
 //Logout
 app.get("/logout", function(req, res){
   req.logout();
-  res.render("home");
+  res.render("home", {
+    startingContent: homeStartingContent,
+    posts: posts,
+  });
 });
 
 //COMPOSE
