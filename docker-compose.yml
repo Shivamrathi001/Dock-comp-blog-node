@@ -3,8 +3,8 @@ services:
   mongo:
     container_name: mongo
     image: mongo:latest
-    volumes:
-      - .mongo:./data/db
+    # volumes:
+    #   - .mongo:./data/db
     networks:
       - nodenet
     
@@ -17,8 +17,7 @@ services:
     networks:
       - nodenet
 
-volumes:
-  mongo: {}
-
+# volumes:
+#   mongo: {}
 networks:
-  nodenet
+  nodenet:

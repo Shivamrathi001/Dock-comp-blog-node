@@ -10,9 +10,9 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-
+//mongodb+srv://test123:test123@cluster0.nto8y.mongodb.net/blog?retryWrites=true&w=majority
 //Mongodb connect
-mongoose.connect("mongodb+srv://test123:test123@cluster0.nto8y.mongodb.net/blog?retryWrites=true&w=majority", {
+mongoose.connect("mongodb://mongo:27017", {
   useNewUrlParser: true
 });
 
