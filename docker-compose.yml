@@ -1,0 +1,24 @@
+version: '3'
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    volumes:
+      - .mongo:./data/db
+    networks:
+      - nodenet
+    
+  node:
+    ports:
+      - 80:80
+    build: ./
+    links:
+      - mongo
+    networks:
+      - nodenet
+
+volumes:
+  mongo: {}
+
+networks:
+  nodenet
